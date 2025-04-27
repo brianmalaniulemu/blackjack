@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blackjack Basic Strategy Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="hand-section">
+      <p>Developer: Brian Malani(0987483365)</p>
+      <h2>Dealer’s Upcard</h2>
+      <div id="dealer-hand" class="hand"></div>
+      <button id="set-dealer-btn" class="control-btn">Set Dealer Card</button>
+    </div>
+
+    <div class="hand-section">
+      <h2>Player’s Hand</h2>
+      <div id="player-cards" class="hand"></div>
+    </div>
+
+    <div class="controls">
+      <div class="suit-selector">
+        <label>Select Suit:</label>
+        <select id="suit-select">
+          <option value="hearts">♥ Hearts</option>
+          <option value="diamonds">♦ Diamonds</option>
+          <option value="clubs">♣ Clubs</option>
+          <option value="spades">♠ Spades</option>
+        </select>
+      </div>
+
+      <div class="rank-selector">
+        <label>Rank:</label>
+        <button id="down-btn">▼</button>
+        <span id="current-rank">2</span>
+        <button id="up-btn">▲</button>
+      </div>
+
+      <button id="add-card-btn" class="control-btn">Add to Player</button>
+    </div>
+
+    <div class="actions">
+      <button id="find-move-btn">Find Best Move</button>
+      <div id="best-move">Best move will appear here</div>
+      <button id="reset-btn" class="control-btn reset">New Hand</button>
+    </div>
+  </div>
+
+  <script src="basic_strategy.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* Global & Body */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('assets/background.jpg') center/cover no-repeat fixed;
+  color: #fff;
+}
+
+/* App Container */
+#app {
+  max-width: 480px;
+  margin: auto;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 12px;
+}
+
+/* Hand Sections */
+.hand-section {
+  margin-bottom: 20px;
+}
+.hand-section h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.hand img {
+  width: 60px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+
+/* Controls Panel */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.suit-selector,
+.rank-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.suit-selector select,
+.rank-selector span {
+  padding: 6px;
+  min-width: 36px;
+  text-align: center;
+}
+.rank-selector button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+.control-btn {
+  background: #28a745;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+}
+.control-btn.reset {
+  background: #dc3545;
+}
+
+/* Actions */
+.actions {
+  text-align: center;
+}
+.actions button {
+  margin: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+#best-move {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  min-height: 1.4em;
+}
+
+/* Responsive: Mobile Portrait */
+@media (max-width: 400px) {
+  .controls {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .suit-selector,
+  .rank-selector {
+    justify-content: center;
+  }
+  .actions button {
+    width: 100%;
+    margin: 4px 0;
+  }
+}
