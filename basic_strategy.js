@@ -128,60 +128,60 @@ function calculateTotal(hand) {
 }
 
 
-// ========================
-// Test Cases
-// ========================
+// // ========================
+// // Test Cases
+// // ========================
 
-function runTests() {
-  // Test 1: Split Aces (should always split)
-  const test1 = {
-      playerHand: [{rank: 'A'}, {rank: 'A'}],
-      dealerCard: {rank: '5'},
-      expected: 'Split'
-  };
-  console.log('Test 1:', getBestMove(test1.playerHand, test1.dealerCard) === test1.expected ? 'PASS' : 'FAIL');
+// function runTests() {
+//   // Test 1: Split Aces (should always split)
+//   const test1 = {
+//       playerHand: [{rank: 'A'}, {rank: 'A'}],
+//       dealerCard: {rank: '5'},
+//       expected: 'Split'
+//   };
+//   console.log('Test 1:', getBestMove(test1.playerHand, test1.dealerCard) === test1.expected ? 'PASS' : 'FAIL');
 
-  // Test 2: Soft 18 vs Dealer 9 (should hit)
-  const test2 = {
-      playerHand: [{rank: 'A'}, {rank: '7'}],
-      dealerCard: {rank: '9'},
-      expected: 'Hit'
-  };
-  console.log('Test 2:', getBestMove(test2.playerHand, test2.dealerCard) === test2.expected ? 'PASS' : 'FAIL');
+//   // Test 2: Soft 18 vs Dealer 9 (should hit)
+//   const test2 = {
+//       playerHand: [{rank: 'A'}, {rank: '7'}],
+//       dealerCard: {rank: '9'},
+//       expected: 'Hit'
+//   };
+//   console.log('Test 2:', getBestMove(test2.playerHand, test2.dealerCard) === test2.expected ? 'PASS' : 'FAIL');
 
-  // Test 3: Surrender 16 vs Dealer 9 (with surrender allowed)
-  const test3 = {
-      playerHand: [{rank: '8'}, {rank: '8'}],
-      dealerCard: {rank: '9'},
-      expected: 'Surrender'
-  };
-  console.log('Test 3:', getBestMove(test3.playerHand, test3.dealerCard, true, true) === test3.expected ? 'PASS' : 'FAIL');
+//   // Test 3: Surrender 16 vs Dealer 9 (with surrender allowed)
+//   const test3 = {
+//       playerHand: [{rank: '8'}, {rank: '8'}],
+//       dealerCard: {rank: '9'},
+//       expected: 'Surrender'
+//   };
+//   console.log('Test 3:', getBestMove(test3.playerHand, test3.dealerCard, true, true) === test3.expected ? 'PASS' : 'FAIL');
 
-  // Test 4: Double 5s vs Dealer 4
-  const test4 = {
-      playerHand: [{rank: '5'}, {rank: '5'}],
-      dealerCard: {rank: '4'},
-      expected: 'Double'
-  };
-  console.log('Test 4:', getBestMove(test4.playerHand, test4.dealerCard) === test4.expected ? 'PASS' : 'FAIL');
+//   // Test 4: Double 5s vs Dealer 4
+//   const test4 = {
+//       playerHand: [{rank: '5'}, {rank: '5'}],
+//       dealerCard: {rank: '4'},
+//       expected: 'Double'
+//   };
+//   console.log('Test 4:', getBestMove(test4.playerHand, test4.dealerCard) === test4.expected ? 'PASS' : 'FAIL');
 
-  // Test 5: Hard 12 vs Dealer 3 (should hit)
-  const test5 = {
-      playerHand: [{rank: '7'}, {rank: '5'}],
-      dealerCard: {rank: '3'},
-      expected: 'Hit'
-  };
-  console.log('Test 5:', getBestMove(test5.playerHand, test5.dealerCard) === test5.expected ? 'PASS' : 'FAIL');
-}
+//   // Test 5: Hard 12 vs Dealer 3 (should hit)
+//   const test5 = {
+//       playerHand: [{rank: '7'}, {rank: '5'}],
+//       dealerCard: {rank: '3'},
+//       expected: 'Hit'
+//   };
+//   console.log('Test 5:', getBestMove(test5.playerHand, test5.dealerCard) === test5.expected ? 'PASS' : 'FAIL');
+// }
 
-// ========================
-// Helper Function for Card Creation
-// ========================
-function createCard(rank, suit = '') {
-  return { rank: rank.toString(), suit };
-}
+// // ========================
+// // Helper Function for Card Creation
+// // ========================
+// function createCard(rank, suit = '') {
+//   return { rank: rank.toString(), suit };
+// }
 
-// ========================
-// Run Tests
-// ========================
-runTests();
+// // ========================
+// // Run Tests
+// // ========================
+// runTests();

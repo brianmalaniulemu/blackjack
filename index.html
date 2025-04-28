@@ -7,48 +7,73 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div id="app">
-    <div class="hand-section">
-      <p>Developer: Brian Malani(0987483365)</p>
-      <h2>Dealer’s Upcard</h2>
-      <div id="dealer-hand" class="hand"></div>
-      <button id="set-dealer-btn" class="control-btn">Set Dealer Card</button>
-    </div>
 
+    <!-- Row 1: Dealer Hand and Card Selector -->
     <div class="hand-section">
-      <h2>Player’s Hand</h2>
-      <div id="player-cards" class="hand"></div>
-    </div>
-
-    <div class="controls">
-      <div class="suit-selector">
-        <label>Select Suit:</label>
-        <select id="suit-select">
-          <option value="hearts">♥ Hearts</option>
-          <option value="diamonds">♦ Diamonds</option>
-          <option value="clubs">♣ Clubs</option>
-          <option value="spades">♠ Spades</option>
-        </select>
+      <h2>Dealer's Hand</h2>
+      <div class="card-selector">
+        <button id="prev-dealer-btn" class="card-nav-btn">◀</button>
+        <div class="card-frame">
+          <div class="card" id="dealer-card">
+            <!-- Dealer card will appear here -->
+          </div>
+        </div>
+        <button id="next-dealer-btn" class="card-nav-btn">▶</button>
       </div>
 
-      <div class="rank-selector">
-        <label>Rank:</label>
-        <button id="down-btn">▼</button>
-        <span id="current-rank">2</span>
-        <button id="up-btn">▲</button>
+      <div class="controls">
+        <button id="set-dealer-btn" class="control-btn">Set Dealer Card</button>
       </div>
-
-      <button id="add-card-btn" class="control-btn">Add to Player</button>
     </div>
 
-    <div class="actions">
-      <button id="find-move-btn">Find Best Move</button>
-      <div id="best-move">Best move will appear here</div>
-      <button id="reset-btn" class="control-btn reset">New Hand</button>
+    <hr>
+
+    <!-- Row 2: Player Hand and Add Card -->
+    <div class="hand-section">
+      <h2>Player's Hand</h2>
+      <div class="card-selector">
+        <button id="prev-player-btn" class="card-nav-btn">◀</button>
+        <div class="card-frame">
+          <div class="card" id="player-card">
+            <!-- Player card will appear here -->
+          </div>
+        </div>
+        <button id="next-player-btn" class="card-nav-btn">▶</button>
+      </div>
+
+      <div class="actions">
+        <button id="add-card-btn" class="control-btn">Add Card</button>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Row 3: Game Actions -->
+    <div class="hand-section">
+      <div class="actions">
+        <button id="find-move-btn" class="control-btn">Get Best Move</button>
+        <button id="reset-btn" class="control-btn reset">New Hand</button>
+      </div>
+    </div>
+
+     <!-- Modal for Best Move -->
+  <div id="best-move-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal-btn" class="close-btn">&times;</span>
+      <h2>Best Move</h2>
+      <p id="best-move-message">Best move message will appear here.</p>
     </div>
   </div>
 
+
+  </div>
+
+ 
+
   <script src="basic_strategy.js"></script>
   <script src="app.js"></script>
+
 </body>
 </html>

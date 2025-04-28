@@ -1,115 +1,237 @@
 /* Global & Body */
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: url('assets/background.jpg') center/cover no-repeat fixed;
   color: #fff;
+  padding: 20px;
 }
 
 /* App Container */
 #app {
   max-width: 480px;
   margin: auto;
-  padding: 16px;
+  padding: 20px;
   background: rgba(0, 0, 0, 0.75);
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */
+.header p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Stack Layout */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* Hand Sections */
 .hand-section {
-  margin-bottom: 20px;
+  text-align: center;
 }
 .hand-section h2 {
-  text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: #f8f9fa;
 }
 .hand {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  padding: 8px 0;
+  gap: 16px;
+  padding: 16px 0;
 }
-.hand img {
-  width: 60px;
-  border: 2px solid #fff;
-  border-radius: 6px;
+.hand .card {
+  width: 72px;
+  height: 96px;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.5s;
+}
+.hand .card:hover {
+  transform: rotateY(180deg);
+}
+
+/* Card Content */
+.card-front {
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  background: #2980b9;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.card-rank {
+  font-size: 1.4rem;
+  color: #444;
+}
+.card-suit {
+  font-size: 1.7rem;
+  color: #333;
+}
+
+/* Placeholder Cards */
+.card.placeholder {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 /* Controls Panel */
 .controls {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 16px;
 }
-.suit-selector,
 .rank-selector {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 16px;
+  font-size: 1.1rem;
 }
-.suit-selector select,
-.rank-selector span {
-  padding: 6px;
-  min-width: 36px;
-  text-align: center;
+.rank-selector label {
+  font-weight: bold;
+  color: #f8f9fa;
 }
-.rank-selector button {
+.rank-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rank-controls button.small-btn {
   background: #333;
   color: #fff;
   border: none;
-  padding: 6px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
+.rank-controls button.small-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+#current-rank {
+  min-width: 40px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* Action Buttons */
 .control-btn {
   background: #28a745;
   border: none;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  padding: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.control-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 .control-btn.reset {
   background: #dc3545;
 }
-
-/* Actions */
-.actions {
-  text-align: center;
-}
-.actions button {
-  margin: 6px;
-  padding: 8px 16px;
-  font-size: 1rem;
+.action-btn {
   background: #007bff;
   border: none;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 8px;
   color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#best-move {
-  margin: 10px 0;
-  font-size: 1.1rem;
-  min-height: 1.4em;
+.action-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.best-move-display {
+  margin-top: 14px;
+  font-size: 1.2rem;
+  min-height: 1.6em;
+  text-align: center;
+  color: #ddd;
 }
 
 /* Responsive: Mobile Portrait */
 @media (max-width: 400px) {
-  .controls {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+  .stack {
+    gap: 16px;
   }
-  .suit-selector,
-  .rank-selector {
-    justify-content: center;
+  .rank-controls button.small-btn {
+    padding: 6px 10px;
   }
-  .actions button {
+  .control-btn,
+  .action-btn {
     width: 100%;
-    margin: 4px 0;
+    padding: 12px 0;
+  }
+}
+
+/* Touch Animations */
+@media (pointer: coarse) {
+  .hand img {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .hand img:active {
+    transform: scale(1.1);
+  }
+  .control-btn:active, .action-btn:active {
+    transform: scale(0.98);
   }
 }
