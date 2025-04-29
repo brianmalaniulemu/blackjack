@@ -114,11 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetGame() {
+    console.log('Resetting game...');
     playerCards = [];
     playerHand.innerHTML = '';
+  
+    const bestMoveEl = document.getElementById('best-move-message');
+    if (bestMoveEl) {
+      bestMoveEl.textContent = 'Best move message will appear here.';
+    } else {
+      console.warn("Element #best-move-message not found in the DOM.");
+    }
+  
     updateDealerFrame();
     updatePlayerFrame();
   }
+
 
   function calculateHandValue(cards) {
     let total = 0;
